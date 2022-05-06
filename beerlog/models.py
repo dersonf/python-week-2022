@@ -28,7 +28,3 @@ class Beer(SQLModel, table=True):
         print(values)
         rate = mean([values['flavor'], values['image'], values['cost']])
         return int(rate)
-
-
-# brewdog = Beer(name="Brewdog", style="NEIPA", flavor=6, image=8, cost=8)
-

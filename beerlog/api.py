@@ -26,4 +26,3 @@ async def add_beer(beer_in: BeerIn, response: Response):
 
     response.status_code = status.HTTP_201_CREATED
     return beer
-

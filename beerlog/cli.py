@@ -1,6 +1,6 @@
 import typer
 from typing import Optional
-from beerlog.core import add_beer_to_db, get_beers_from_db
+from beerlog.core import add_beer_to_database, get_beers_from_database
 from rich.table import Table
 from rich.console import Console
 
@@ -20,7 +20,7 @@ def add(
     cost: int = typer.Option(...),
 ):
     """Adds a new beer to database."""
-    if add_beer_to_db(name, style, flavor, image, cost):
+    if add_beer_to_database(name, style, flavor, image, cost):
         print("Beer successfully added!!!")
     else:
         print("Deu ruim!!!")
@@ -29,7 +29,7 @@ def add(
 @main.command("list")
 def list_beers(style: Optional[str] = None):
     """List beers in database."""
-    beers = get_beers_from_db()
+    beers = get_beers_from_database()
     table = Table(title="Beerlog")
     headers = ["id", "name", "style", "rate", "date"]
     for header in headers:
@@ -38,5 +38,3 @@ def list_beers(style: Optional[str] = None):
         values = [str(getattr(beer, header)) for header in headers]
         table.add_row(*values)
     console.print(table)
-
-
