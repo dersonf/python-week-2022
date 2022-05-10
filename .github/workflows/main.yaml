@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - "*"
-  workflow_request:
+  workflow_dispatch:
 
 jobs:
   test:
