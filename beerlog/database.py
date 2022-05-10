@@ -1,4 +1,3 @@
-from unicodedata import category
 from sqlmodel.sql.expression import Select, SelectOfScalar
 from sqlmodel import create_engine, Session
 from beerlog.config import settings
